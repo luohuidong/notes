@@ -5,7 +5,7 @@ const nav = {
   text: '前端基础', 
   items: [
     { text: 'HTML', link: '/basics/html/' },
-    { text: 'SCSS', link: '/basics/css/' },
+    { text: 'CSS', link: '/basics/css/' },
     { 
       text: 'ECMAScript', 
       items: [
