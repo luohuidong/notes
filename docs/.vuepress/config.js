@@ -4,6 +4,7 @@ const sidebar = require('./siderBar')
 module.exports = {
   title: 'Code Notes',
   description: 'Emmmm...',
+  base: '/notes/',
   markdown: {
     lineNumbers: true
   },
