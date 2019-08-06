@@ -138,3 +138,60 @@ x = [10, "hello"]; // ERROR
 // Type 'number' is not assignable to type 'string'.
 // Type 'string' is not assignable to type 'number'.
 ```
+
+## Enum
+
+```ts
+enum Color {
+  Red,
+  Green,
+  Blue
+}
+
+let c: Color = Color.Green; // 1
+```
+
+在默认情况下，枚举类型第一个成员的值从 0 开始，其它成员的值从 0 加 1 递增。
+
+### 更改默认初始值
+
+枚举类型第一个成员的初始值可以更改，如：
+
+```ts
+enum Color {
+  Red = 1,
+  Green,
+  Blue
+}
+
+let c: Color = Color.Green; // 2
+```
+
+上面的例子中，我们将枚举类型中第一个元素的值设置为 1，那么后面元素的值也会在 1 的基础上加 1 递增。
+
+当然，除了给第一个元素手动设置值之外，还可以给其他元素也设置值：
+
+```ts
+enum Color {
+  Red = 1,
+  Green = 2,
+  Blue = 4
+}
+let c: Color = Color.Green; // 2
+```
+
+### 通过 value 找 key
+
+枚举类型可以通过 key 获取相应的 value，也可以通过相应的 value 获取 key：
+
+```ts
+enum Color {
+  Red = 1,
+  Green,
+  Blue
+}
+
+let colorName: string = Color[2];
+
+console.log(colorName); // Displays 'Green' as its value is 2 above
+```
