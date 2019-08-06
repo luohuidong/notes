@@ -4,7 +4,7 @@ const react = require('../react/')
 
 module.exports = {
   title: 'Code Notes',
-  description: '我的代码笔录',
+  description: '代码笔录',
   base: '/notes/',
   head: [
     ['link', { rel: 'icon', href: '/icon.png' }]
@@ -22,6 +22,7 @@ module.exports = {
       react.nav,
       advance.nav,
     ],
+    sidebarDepth: 3,
     sidebar: {
       ...basics.sidebar,
       ...advance.sidebar
