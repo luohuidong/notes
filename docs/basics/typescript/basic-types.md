@@ -14,16 +14,15 @@
 
 - Object 类型
 - Array 类型
-- Date 类型
-- RegExp 类型
 - Function 类型
-- 基本包装类型
 
-在 ES6 中，新增了第 6 个基本类型：Symbol。而在 ES10 中，则新增了第 7 个基本类型：BigInt。
+在 ES6 中，新增了第 6 个基本类型：Symbol。
 
-TypeScript 为 ECMAScript 的超集，自然而然囊括了上面的所有类型，并且在此基础上还进行了类型扩展。
+TypeScript 为 ECMAScript 的超集，自然而然囊括了上面的所有类型，并且在此基础上还进行了类型扩展，例如 `void`、`any`、`never`、元组、枚举、高级类型。
 
-下面介绍 TypeScript 的类型
+## 类型注解
+
+在介绍 TypeScript 的数据类型之前，了解一下“类型注解”这个概念，它相当于强类型语言中的类型声明，对变量起到一个约束的作用。其形式为 `(变量/函数):type`。
 
 ## Undefined 和 Null
 
@@ -111,9 +110,17 @@ let list: number[] = [1, 2, 3];
 let list: Array<number> = [1, 2, 3];
 ```
 
+如果数组元素有多种类型，那么可以使用联合类型来定义：
+
+```ts
+let list: Array<number | string> = [1, 2, 3, '4'];
+```
+
+上面的例子中表示数组中的元素即可以是 `number` 类型，也可以是 `string` 类型。
+
 ## Tuple
 
-`Tuple` 类型用于表示一个已知元素数量以及元素对应数据类型的数组。
+`Tuple` 类型，是一种特殊的数组。它用于限定一个数组的元素数量以及相应位置的元素数据类型。
 
 ```ts
 let x: [string, number];
@@ -137,6 +144,14 @@ let x: [string, number];
 x = [10, "hello"]; // ERROR
 // Type 'number' is not assignable to type 'string'.
 // Type 'string' is not assignable to type 'number'.
+```
+
+虽说 `tuple` 限制了数组的长度和类型，当我们仍然可以用类似 `push` 之类的方法来改变数组，但是我们去访问这个通过 `push` 方法添加的元素时会报错，因此在实际开发过程中，强烈不建议这样操作 `tuple`：
+
+```ts
+let tuple: [string, number] = ['a', 1]
+tuple.push(3)
+tuple[2] // Tuple type '[string, number]' of length '2' has no element at index '2'.
 ```
 
 ## Enum
@@ -194,4 +209,50 @@ enum Color {
 let colorName: string = Color[2];
 
 console.log(colorName); // Displays 'Green' as its value is 2 above
+```
+
+## Any
+
+`any` 表示一个变量为任意类型。我们在编写代码的时候，可能并不清楚某一个变量到底是什么类型，此时就可以使用 `any` 来进行描述。
+
+```ts
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false; // okay, definitely a boolean
+```
+
+需要注意的是，`any` 类型的变量，在编译时自动跳过类型检查，因此不要滥用 `any`，否则 TypeScript 将失去它的意义。
+
+## Void
+
+`void` 在 js 中是一种操作符，它可以用任意表达式来返回 `undefined`，如 `void 0` 其返回值就是 `undefined`。有这种设置的主要原因是 `undefined` 在 js 中并不是保留字，因此如果定义了一个 undefined 的变量就会覆盖全局的 `undefined`。
+
+```js
+(function() {
+  var undefined = 0
+  console.log(undefined) // 0
+})()
+```
+
+而在 ts 中 `void` 表示没有任何类型的返回值。最为常见的就是一个没有返回值的函数，会定义它的返回类型为 `void`。
+
+```ts
+function warnUser(): void {
+  console.log("This is my warning message");
+}
+```
+
+## Function
+
+在声明函数的时候，需要给函数的参数指定类型，此时函数的返回值类型可以省略，因此 ts 会自动推断返回类型：
+
+```ts
+let add = (x: number, y: number) => x + y
+```
+
+声明函数类型还可以通过下面的形式来定义：
+
+```ts
+let compute: (x: number, y: number) => number
+compute = (a, b) => a + b;
 ```
