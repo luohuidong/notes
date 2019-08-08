@@ -1,6 +1,6 @@
 const path = '/basics/typescript/'
 const title = 'TypeScript'
-const firstPost = 'basic-types-1'
+const firstPost = 'basic-types'
 
 const navItem = {
   text: title,
@@ -14,8 +14,6 @@ const sidebar = {
       collapsable: false,
       children: [
         firstPost,
-        'basic-types-2',
-        'basic-types-3',
         'interfaces'
       ]
     }
