@@ -1,9 +1,10 @@
 const path = '/basics/typescript/'
 const title = 'TypeScript'
+const firstPost = 'basic-types-1'
 
-const navItem = { 
-  text: title, 
-  link: `${path}basic-types`
+const navItem = {
+  text: title,
+  link: `${path}${firstPost}`
 }
 
 const sidebar = {
@@ -12,7 +13,9 @@ const sidebar = {
       title,
       collapsable: false,
       children: [
-        'basic-types',
+        firstPost,
+        'basic-types-2',
+        'basic-types-3',
         'interfaces'
       ]
     }
@@ -21,5 +24,5 @@ const sidebar = {
 
 module.exports = {
   navItem,
-  sidebar  
+  sidebar
 }
