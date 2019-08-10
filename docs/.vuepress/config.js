@@ -1,6 +1,7 @@
-const basics = require('../basics')
-const advance = require('../advance')
+const frontendBasic = require('../frontend-basic/')
+const advance = require('../advance/')
 const react = require('../react/')
+const computerBasic = require('../computer-basic')
 
 module.exports = {
   title: 'Code Notes',
@@ -18,14 +19,16 @@ module.exports = {
         text: '首页',
         link: '/',
       },
-      basics.nav,
+      frontendBasic.nav,
       react.nav,
       advance.nav,
+      computerBasic.nav,
     ],
     sidebarDepth: 3,
     sidebar: {
-      ...basics.sidebar,
-      ...advance.sidebar
+      ...frontendBasic.sidebar,
+      ...advance.sidebar,
+      ...computerBasic.sidebar
     },
   }
 }
