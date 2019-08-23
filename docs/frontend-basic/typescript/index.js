@@ -1,4 +1,6 @@
-const path = '/basics/typescript/'
+const { getDocsDirectory } = require('../../utils')
+
+const path = getDocsDirectory(__dirname)
 const title = 'TypeScript'
 const firstPost = 'basic-types'
 
@@ -14,6 +16,8 @@ const sidebar = {
       collapsable: false,
       children: [
         firstPost,
+        'basic-types-2',
+        'basic-types-3',
         'interfaces'
       ]
     }
