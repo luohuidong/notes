@@ -15,7 +15,6 @@ const sidebar = {
   [path]: [
     {
       title,
-      collapsable: false,
       children: [
         'basic-types',
       ]

@@ -13,7 +13,6 @@ const sidebar = {
   [path]: [
     {
       title,
-      collapsable: false,
       children: [
         firstPost,
         'basic-types-2',
