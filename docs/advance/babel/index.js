@@ -1,8 +1,8 @@
 const { getDocsDirectory } = require('../../utils')
 
 const path = getDocsDirectory(__dirname)
-const title = 'Webpack'
-const firstPost = 'concepts'
+const title = 'Babel'
+const firstPost = 'what-is-babel'
 
 const navItem = {
   text: title,
@@ -11,10 +11,15 @@ const navItem = {
 
 const sidebar = {
   [path]: [
+    'todo',
     {
       title,
       children: [
         firstPost,
+        'concept',
+        'configure-babel',
+        'plugins',
+        'presets'
       ]
     }
   ]
