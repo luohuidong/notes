@@ -24,7 +24,7 @@ module.exports = {
       advance.nav,
       computerBasic.nav,
     ],
-    sidebarDepth: 3,
+    sidebarDepth: 1,
     sidebar: {
       ...frontendBasic.sidebar,
       ...advance.sidebar,
