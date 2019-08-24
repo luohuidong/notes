@@ -161,3 +161,7 @@ function infiniteLoop(): never {
 这与函数返回值为 `void` 的情况有点不太一样，`void` 的情况是我们主动不设置 return 值的，而 `never` 这种是死循环根本不会有返回值，这两者还是有区别的。
 
 `never` 类型是所有类型的子类型，但是除了 `never` 本身，并没有一个类型是 `never` 的子类型，即使是 `any` 也不能赋值给 `never` 类型。
+
+## 参考资料
+
+- [Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)

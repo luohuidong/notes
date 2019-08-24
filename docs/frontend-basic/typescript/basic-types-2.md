@@ -48,3 +48,7 @@ let add = (x: number, y: number) => x + y
 let compute: (x: number, y: number) => number
 compute = (a, b) => a + b;
 ```
+
+## 参考资料
+
+- [Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)

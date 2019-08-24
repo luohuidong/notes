@@ -85,3 +85,7 @@ TypeScript 中的 String 类型与 ECMAScript 相同。
 ```ts
 let color: string = "string"
 ```
+
+## 参考资料
+
+- [Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)
