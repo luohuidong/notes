@@ -1,22 +1,16 @@
+const { generateNavAndSidebarConfig } = require('../utils')
+
 const htmlConfig = require('./html')
 const es5Config = require('./es5')
 const typescriptConfig = require('./typescript')
 
-// 定义 navBar 中前端基础相关的可选项
+const docs = [htmlConfig, es5Config, typescriptConfig]
 const nav = {
   text: '前端基础',
-  items: [
-    htmlConfig.navItem,
-    es5Config.navItem,
-    typescriptConfig.navItem,
-  ]
+  items: []
 }
-
-const sidebar = {
-  ...htmlConfig.sidebar,
-  ...es5Config.sidebar,
-  ...typescriptConfig.sidebar
-}
+const sidebar = {}
+generateNavAndSidebarConfig(docs, nav, sidebar)
 
 module.exports = {
   nav,

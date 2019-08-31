@@ -12,6 +12,21 @@ function getDocsDirectory(dirName) {
   return '/' + paths.slice(paths.indexOf('docs') + 1).join('/') + '/'
 }
 
+/**
+ * 
+ * @param {object} configs
+ * @param {object} navConfig
+ * @param {object} sidebarConfig
+ */
+function generateNavAndSidebarConfig(configs, navConfig, sidebarConfig) {
+  configs.forEach(element => {
+    navConfig.items.push(element.navItem)
+    Object.assign(sidebarConfig, element.sidebar)
+  })
+
+}
+
 module.exports = {
-  getDocsDirectory
+  getDocsDirectory,
+  generateNavAndSidebarConfig
 }
