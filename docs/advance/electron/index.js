@@ -2,7 +2,7 @@ const { getDocsDirectory } = require('../../utils')
 
 const path = getDocsDirectory(__dirname)
 const title = 'Electron'
-const firstPost = 'electron-builder'
+const firstPost = 'start'
 
 const navItem = {
   text: title,
@@ -15,6 +15,7 @@ const sidebar = {
       title,
       children: [
         firstPost,
+        'electron-builder',
       ]
     }
   ]
