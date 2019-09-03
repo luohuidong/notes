@@ -5,7 +5,7 @@ Babel 主要用于将 ECMAScript 2015+ 的代码转换成能在现代浏览器�
 Babel 的主要工作：
 
 1. 转换语法，即对 ES2015+ 的新语法进行转换。
-1. 在目标环境所缺失的功能进行 polyfill（polyfill 可以理解为对缺失的功能进行填补）。
+1. 对目标环境所缺失的功能进行 polyfill（polyfill 可以理解为对缺失的功能进行填补）。
 
 ## Babel 特点
 
