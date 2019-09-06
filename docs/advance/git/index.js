@@ -18,7 +18,8 @@ const sidebar = {
         'start',
         'getting-a-git-repository',
         'recording-changes-to-the-repository',
-        'rename-filename'
+        'rename-filename',
+        'git-log'
       ]
     }
   ]
