@@ -17,7 +17,8 @@ const sidebar = {
         firstPost,
         'start',
         'getting-a-git-repository',
-        'recording-changes-to-the-repository'
+        'recording-changes-to-the-repository',
+        'rename-filename'
       ]
     }
   ]
