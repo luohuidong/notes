@@ -1,27 +1,32 @@
 # 探秘 .git 目录
 
-当我们执行 `git init` 初始化一个 Git 仓库的时候，我们会发现目录中多了一个 .git 目录，下面输出的内容为 `.git` 目录的结构：
+当我们执行 `git init` 初始化一个 Git 仓库的时候，我们会发现目录中多了一个 .git 目录。这个目录包含了几乎所有 Git 存储和操作的对象。如果想备份或复制一个版本库，只需把这个目录拷贝至另一处即可。
+
+下面输出的内容为 `.git` 目录的结构：
 
 ```plain
-drwxrwxrwx 1 luo luo 4096 Sep  8 14:30 .
-drwxrwxrwx 1 luo luo 4096 Sep  8 11:44 ..
--rwxrwxrwx 1 luo luo   13 Sep  8 11:44 COMMIT_EDITMSG
--rwxrwxrwx 1 luo luo    0 Sep  6 21:00 FETCH_HEAD
--rwxrwxrwx 1 luo luo   23 Sep  8 11:44 HEAD
--rwxrwxrwx 1 luo luo   41 Sep  8 11:42 ORIG_HEAD
-drwxrwxrwx 1 luo luo 4096 Sep  5 08:18 branches
--rwxrwxrwx 1 luo luo   92 Sep  5 08:18 config
--rwxrwxrwx 1 luo luo   73 Sep  5 08:18 description
--rwxrwxrwx 1 luo luo  505 Sep  8 14:18 gitk.cache
-drwxrwxrwx 1 luo luo 4096 Sep  5 08:18 hooks
--rwxrwxrwx 1 luo luo  554 Sep  8 11:44 index
-drwxrwxrwx 1 luo luo 4096 Sep  5 08:18 info
-drwxrwxrwx 1 luo luo 4096 Sep  5 08:27 logs
-drwxrwxrwx 1 luo luo 4096 Sep  8 11:44 objects
-drwxrwxrwx 1 luo luo 4096 Sep  5 08:18 refs
+COMMIT_EDITMSG*
+FETCH_HEAD*
+HEAD*
+ORIG_HEAD*
+branches/
+config*
+description*
+gitk.cache*
+hooks/
+index*
+info/
+logs/
+objects/
+refs/
 ```
 
-本章节将介绍 .git 目录中我们平时接触得比较多的目录和文件。
+本章节将介绍 `HEAD` 文件、`objects` 目录、`refs` 目录、`index` 文件，这些都是 Git 的核心组成部分。
+
+- `objects` 目录存储所欲数据内容。
+- `refs` 目录存储只想数据（分支）的提交对象的指针。
+- `HEAD` 文件指示目前被检出的分支。
+- `index` 文件保存暂存区信息。
 
 ## HEAD 文件
 
@@ -39,7 +44,7 @@ ref 表示引用，指向 .git 目录下的 refs/heads/master 分支。
 ref: refs/heads/test
 ```
 
-切换成 `test` 分支之后，HEAD 中的内容，已经从 `ref: refs/heads/master` 变成 `ref: refs/heads/test` 了。因此 HEAD 文件能够告诉我们当前工作在哪个分支上面。
+切换成 `test` 分支之后，HEAD 中的内容，已经从 `ref: refs/heads/master` 变成 `ref: refs/heads/test` 了。因此我们可以将 HEAD 理解为它告诉我们当前这个仓库工作在哪个分支上面。
 
 ## config 文件
 
@@ -69,20 +74,18 @@ ref: refs/heads/test
 
 ## refs 目录
 
-refs 目录中的目录和文件：
+.git/refs/ 目录结构：
 
 ```plain
 drwxrwxrwx 1 luo luo 4.0K Sep  8 11:44 heads
 drwxrwxrwx 1 luo luo 4.0K Sep  5 08:18 tags
 ```
 
-refs 目录中包含 heads 目录和 tags 目录。这意味着 Git 仓库是可以有多个分支以及多个标签。
-
-有些书本也将 tags 叫做里程碑，表示一个项目已经开发到某个程度，如项目已经到了 1.0 的版本，这时候就可以针对 1.0 这个版本的 commit 打上一个标签，标识这是 1.0 版本的里程碑。
+refs 目录中包含 heads 目录和 tags 目录。这意味着 Git 仓库是可以有多个分支以及多个标签的。
 
 ### heads 目录
 
-heads 目录结构：
+.git/refs/heads/ 目录与我们的分支相关，下面为 .git/refs/heads/ 目录结构：
 
 ```plain
 -rwxrwxrwx 1 luo luo 41 Sep  8 11:44 master
@@ -97,9 +100,19 @@ heads 目录结构：
 574783f243fd9463ab0fac8e64964209d0b2b3e4
 ```
 
-这一串东西表示 master 分支当前指向的是哪一个 commit。
+这一串东西其实表示一种 Git object 对象，通过下面的命令可以知道它代表的是什么对象类型：
 
-我们通过 `git log` 是可以看到每一个 commit 对应的标识的。
+```bash
+git cat-file -t 574783f243fd9463ab0fac8e64964209d0b2b3e4
+```
+
+输出内容为：
+
+```plain
+commit
+```
+
+从上面的结果可以知道，574783f243fd9463ab0fac8e64964209d0b2b3e4 代表了一个 commit 的标识。通过 `git log` 查看一下 master 分支的最新提交历史：
 
 ```plain
 commit 574783f243fd9463ab0fac8e64964209d0b2b3e4 (HEAD -> master)
@@ -119,13 +132,15 @@ Date:   Thu Sep 5 09:11:06 2019 +0800
 
 在 master 分支上面执行 `git log` 命令，我们可以查看到 master 分支最新的一次 commit 的标识就是 574783f243fd9463ab0fac8e64964209d0b2b3e4，而这串东西而刚好对应了我们在 .git/refs/heads/master 中的内容。
 
-### tags
+### tags 目录
 
-tags 目录下的文件与 heads 目录是类似的，其中的文件内容也是指向一个 commit 标识。
+给项目打 tag，可以理解为项目的开发程度已经达到某个里程碑。如项目已经达到 1.0 的版本，这时候我们就可以针对 1.0 这个版本的 commit 打上一个标签。
+
+.gits/refs/tags/ 目录下的文件与 heads 目录是类似的，其中的文件内容也是指向一个 commit 标识。
 
 ## objects 目录
 
-objects 目录存放着对 Git 文件系统至关重要的核心内容。
+.objects 目录存放着对 Git 文件系统至关重要的核心内容。
 
 Git 中的核心对象：
 

@@ -1,29 +1,26 @@
-const { getDocsDirectory } = require('../../utils')
-
-const path = getDocsDirectory(__dirname)
-const title = 'Git'
-const firstPost = 'material'
+const path = '/advance/git/'
 
 const navItem = {
-  text: title,
-  link: `${path}${firstPost}`
+  text: 'Git',
+  link: `${path}material`
 }
 
 const sidebar = {
   [path]: [
     {
-      title,
+      title: 'Git',
       children: [
-        firstPost,
+        'material',
         'start',
         'getting-a-git-repository',
         'recording-changes-to-the-repository',
         'rename-filename',
         'git-log',
-        'git'
+        'git',
+        'git-objects'
       ]
-    }
-  ]
+    },
+  ],
 }
 
 module.exports = {
