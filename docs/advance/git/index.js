@@ -16,7 +16,7 @@ const sidebar = {
         'recording-changes-to-the-repository',
         'rename-filename',
         'git-log',
-        'git',
+        'git-folder',
         'git-objects'
       ]
     },
