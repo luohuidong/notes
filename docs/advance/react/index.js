@@ -1,5 +1,6 @@
 const { getDocsDirectory } = require('../../utils')
 
+
 const path = getDocsDirectory(__dirname)
 const title = 'React'
 const firstPost = 'material'
@@ -11,10 +12,20 @@ const navItem = {
 
 const sidebar = {
   [path]: [
+    'material',
     {
-      title,
+      title: 'React',
       children: [
-        firstPost,
+        'react/ssr-csr',
+        'react/data-flow',
+        'react/lifecycle',
+        'react/fragments'
+      ]
+    },
+    {
+      title: 'Redux',
+      children: [
+        'redux'
       ]
     }
   ]
