@@ -1,6 +1,8 @@
 # build
 npm run build
 
+cp CNAME docs/.vuepress/dist/
+
 # navigate into the build output directory
 cd docs/.vuepress/dist
 
