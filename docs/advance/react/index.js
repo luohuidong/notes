@@ -21,12 +21,6 @@ const sidebar = {
         'react/lifecycle',
         'react/fragments'
       ]
-    },
-    {
-      title: 'Redux',
-      children: [
-        'redux'
-      ]
     }
   ]
 }
