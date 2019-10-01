@@ -19,7 +19,6 @@ docs.forEach(element => {
 module.exports = {
   title: 'Code Notes',
   description: '代码笔录',
-  base: '/notes/',
   head: [
     ['link', { rel: 'icon', href: '/icon.png' }]
   ],
