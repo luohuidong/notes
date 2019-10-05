@@ -31,7 +31,7 @@ module.exports = {
       indexName: 'luohuidong',
     },
     nav,
-    sidebarDepth: 1,
+    sidebarDepth: 2,
     sidebar,
   }
 }
