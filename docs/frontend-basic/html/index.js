@@ -17,6 +17,12 @@ const sidebar = {
         firstPost,
       ]
     },
+    {
+      title: 'Media',
+      children: [
+        'media/resource'
+      ]
+    }
   ]
 }
 
