@@ -15,8 +15,6 @@ const sidebar = {
       title,
       children: [
         firstPost,
-        'basic-types-2',
-        'basic-types-3',
         'interfaces'
       ]
     }
