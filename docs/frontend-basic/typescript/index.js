@@ -2,7 +2,7 @@ const { getDocsDirectory } = require('../../utils')
 
 const path = getDocsDirectory(__dirname)
 const title = 'TypeScript'
-const firstPost = 'basic-types'
+const firstPost = 'material'
 
 const navItem = {
   text: title,
@@ -15,6 +15,7 @@ const sidebar = {
       title,
       children: [
         firstPost,
+        'basic-types',
         'interfaces'
       ]
     }
