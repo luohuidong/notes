@@ -1,22 +1,23 @@
 const { getDocsDirectory } = require('../../utils')
 
 const path = getDocsDirectory(__dirname)
-const title = 'ES5'
+const title = 'JavaScript'
 const firstPost = 'basic-types'
 
-// 定义导航中 ES5 链接
+// 定义导航中 JavaScript 链接
 const navItem = {
   text: title,
   link: `${path}${firstPost}`
 }
 
-// 定义 ES5 相关内容的侧边栏
+// 定义 JavaScript 相关内容的侧边栏
 const sidebar = {
   [path]: [
     {
       title,
       children: [
         'basic-types',
+        'event-focus'
       ]
     }
   ]

@@ -2,7 +2,7 @@ const { generateNavAndSidebarConfig } = require('../utils')
 
 const htmlConfig = require('./html')
 const cssConfig = require('./css')
-const es5Config = require('./es5')
+const es5Config = require('./javascript')
 const typescriptConfig = require('./typescript')
 const npmConfig = require('./npm')
 
