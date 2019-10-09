@@ -17,7 +17,7 @@ const sidebar = {
       title,
       children: [
         'basic-types',
-        'event-focus'
+        'event'
       ]
     }
   ]
