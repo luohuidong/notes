@@ -15,14 +15,10 @@ const sidebar = {
       title: 'HTML',
       children: [
         firstPost,
+        'media',
+        'storage'
       ]
     },
-    {
-      title: 'Media',
-      children: [
-        'media/resource'
-      ]
-    }
   ]
 }
 
