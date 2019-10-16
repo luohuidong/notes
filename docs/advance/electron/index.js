@@ -17,6 +17,7 @@ const sidebar = {
         firstPost,
         'start',
         'electron-builder',
+        'update',
       ]
     }
   ]
