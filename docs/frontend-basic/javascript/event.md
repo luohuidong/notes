@@ -1,8 +1,10 @@
 # 事件
 
 - [Introduction to events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+- [Event interface](https://developer.mozilla.org/en-US/docs/Web/API/Event)
 - [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 - [EventTarget.removeEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
+- [How JavaScript Event Delegation Works](https://davidwalsh.name/event-delegate)
 
 ## 鼠标事件
 
