@@ -18,6 +18,7 @@ const sidebar = {
         'start',
         'electron-builder',
         'update',
+        'code-signing'
       ]
     }
   ]
