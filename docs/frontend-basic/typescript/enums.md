@@ -25,9 +25,11 @@ function initByRole(role) {
 
 以通讯录举例子，我们一般只会去记住人名，而不会选择直接去记住具体的手机号，通过名字去搜索对应的手机号就可以了。况且电话号码是会变的，而人名基本上不会变。手机号就类似于枚举类型中的常量，而人的名字就对应着枚举类型中这些常量的名字。
 
-而枚举类型分为字符串枚举和数字枚举。
+## 枚举的类型
 
-## 数字枚举
+枚举有两种类型，字符串枚举和数字枚举。
+
+### 数字枚举 (numeric enums)
 
 ```ts
 enum Role {
@@ -40,6 +42,12 @@ enum Role {
 ```
 
 数字枚举，它的成员取值从 0 开始，后面成员取值自动递增。
+
+使用枚举类型非常简单，只需要将枚举成员当做枚举的属性来访问即可：
+
+```ts
+console.log(Role.Reporter) // 0
+```
 
 如果不想从 0 开始，也可以直接改第一个成员赋值：
 
@@ -69,7 +77,7 @@ var Role;
 })(Role || (Role = {}));
 ```
 
-在上面编译后的 JS 代码就是枚举类型的实现原理。从上面的代码可以看到 value 被作为 key，而 key 也被作为 value，这种方法叫做反向映射。
+在上面编译后的 JS 代码就是枚举类型的实现原理。从上面的代码可以看到 value 被作为 key，而 key 也被作为 value，这种方法叫做反向映射 (reverse mapping)。
 
 将 Role 打印出来，它的数据结构为：
 
@@ -91,7 +99,7 @@ var Role;
 
 因此我们既可以用枚举成员的名字来索引，也可以使用枚举成员的值来索引。
 
-## 字符串枚举
+### 字符串枚举
 
 ```ts
 enum Message {
@@ -109,5 +117,134 @@ var Message;
     Message["Success"] = "\u606D\u559C\u4F60\uFF0C\u6210\u529F\u4E86";
     Message["Fail"] = "\u62B1\u6B49\uFF0C\u5931\u8D25\u4E86";
 })(Message || (Message = {}));
+```
+
+## 异构枚举 (Heterogeneous enums)
+
+当数字枚举和字符串枚举混合使用的时候，就构成了异构枚举。但是这种情况比较容易造成混淆，因此不建议使用。下面是一个异构枚举的例子：
+
+```ts
+enum Answer {
+  N,
+  Y = 'Yes'
+}
+```
+
+## 枚举成员的一些性质
+
+### 枚举成员值为只读
+
+枚举成员定义了之后，就是只读的，因此如果尝试修改是会提示报错的：
+
+```ts
+enum Color {
+  Red
+  Green,
+  Blue
+}
+
+Color.Red = 2; // Error: Cannot assign to 'Red' because it is a read-only property.
+```
+
+### 枚举成员类型
+
+枚举成员类型分为两类，一类为 constant member，另一类为 computed member。
+
+constant member 会在编译的时候就计算出值，下面为 constant member 的例子：
+
+```ts
+enum Char {
+  a,
+  b = Char.a,
+  c = 1 + 3
+}
+```
+
+上面的代码编译结果为：
+
+```js
+"use strict";
+var Char;
+(function (Char) {
+    Char[Char["a"] = 0] = "a";
+    Char[Char["b"] = 0] = "b";
+    Char[Char["c"] = 4] = "c";
+})(Char || (Char = {}));
+```
+
+而 computed member 它的值为一些非常量的表达式，其值并不会在编译阶段计算值，而是会保留到执行阶段。下面为 computed member 的例子：
+
+```ts
+enum Char {
+  d = Math.random(),
+  e = '123'.length
+}
+```
+
+上面的代码编译结果为：
+
+```js
+"use strict";
+var Char;
+(function (Char) {
+    Char[Char["d"] = Math.random()] = "d";
+    Char[Char["e"] = '123'.length] = "e";
+})(Char || (Char = {}));
+
+```
+
+在使用 computed member 的时候，后面紧跟的成员一定需要赋予初始值，否则会报错
+
+```ts
+enum Char {
+  d = Math.random(),
+  e = '123'.length,
+  f // Error: Enum member must have initializer.
+}
+```
+
+## 常量枚举
+
+用 const 声明的枚举就是常量枚举，常量枚举有一个特性，就是会在编译阶段被移除。
+
+```ts
+const enum Month {
+  Jan,
+  Feb,
+  Mar
+}
+
+const month = [Month.Jan, Month.Feb, Month.Mar]
+```
+
+编译结果：
+
+```js
+"use strict";
+const month = [0 /* Jan */, 1 /* Feb */, 2 /* Mar */];
+```
+
+当我们不需要一个对象，而只需要一个对象的值的时候，就可以使用常量枚举了，这样就能减少编译后的代码。
+
+## 枚举类型
+
+在某些情况下，枚举和枚举成员都可以作为一种单独的类型存在。
+
+第一种情况就是枚举类型没有任何初始值：
+
+```ts
+enum E { a, b }
+```
+
+第二种情况是所有枚举成员都是数字枚举：
+
+```ts
+enum F { a = 0, b = 1 }
+```
+
+第三种情况就是所有枚举成员都是字符串枚举：
+
+```ts
+enum G { a = 'apple', b = 'banana' }
 ```
 

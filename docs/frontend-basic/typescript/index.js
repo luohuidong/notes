@@ -16,7 +16,8 @@ const sidebar = {
       children: [
         firstPost,
         'basic-types',
-        'interfaces'
+        'interfaces',
+        'enums'
       ]
     }
   ]
