@@ -4,6 +4,9 @@ const path = getDocsDirectory(__dirname)
 const title = 'TypeScript'
 const firstPost = 'material'
 
+const basicTypes = require('./basic-types')
+const enums = require('./enums')
+
 const navItem = {
   text: title,
   link: `${path}${firstPost}`
@@ -15,12 +18,12 @@ const sidebar = {
       title,
       children: [
         firstPost,
-        'basic-types',
         'interfaces',
-        'enums'
       ]
-    }
-  ]
+    },
+    basicTypes,
+    enums
+  ],
 }
 
 module.exports = {
