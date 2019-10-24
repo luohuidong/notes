@@ -48,3 +48,10 @@ release 分支基于 develop 分支进行创建。其名称前缀为 'release/'�
 2. 为该 hotfix 打上 tag。
 3. 将 hotfix 分支删除。
 4. 对 master 分支进行打包。
+
+## 参考资料
+
+- [Workflows with git-flow](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow)
+- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+- [gitflow-avh](https://github.com/petervanderdoes/gitflow-avh)
+
