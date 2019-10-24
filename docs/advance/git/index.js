@@ -17,7 +17,8 @@ const sidebar = {
         'rename-filename',
         'git-log',
         'git-folder',
-        'git-objects'
+        'git-objects',
+        'git-flow'
       ]
     },
   ],
