@@ -12,14 +12,15 @@ const navItem = {
 
 const sidebar = {
   [path]: [
-    'material',
     {
       title: 'React',
       children: [
-        'react/ssr-csr',
-        'react/data-flow',
-        'react/lifecycle',
-        'react/fragments'
+        'material',
+        'material',
+        'ssr-csr',
+        'data-flow',
+        'lifecycle',
+        'fragments'
       ]
     }
   ]
