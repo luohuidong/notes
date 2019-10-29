@@ -6,6 +6,7 @@ const firstPost = 'material'
 
 const basicTypes = require('./basic-types')
 const enums = require('./enums')
+const interfaces = require('./interfaces')
 
 const navItem = {
   text: title,
@@ -19,10 +20,13 @@ const sidebar = {
       children: [
         firstPost,
         'interfaces',
+        'function',
+        'generics'
       ]
     },
     basicTypes,
-    enums
+    enums,
+    interfaces
   ],
 }
 
