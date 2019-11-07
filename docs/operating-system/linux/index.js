@@ -15,6 +15,8 @@ const sidebar = {
       title,
       children: [
         firstPost,
+        'change-ssh-login-port',
+        'find-ip-address'
       ]
     }
   ]
