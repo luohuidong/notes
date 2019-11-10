@@ -1,4 +1,5 @@
 const { getDocsDirectory } = require('../../utils')
+const objectConfig = require('./object')
 
 const path = getDocsDirectory(__dirname)
 const title = 'JavaScript'
@@ -19,7 +20,8 @@ const sidebar = {
         'basic-types',
         'event'
       ]
-    }
+    },
+    objectConfig
   ]
 }
 
