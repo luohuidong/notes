@@ -1,8 +1,8 @@
 const { getDocsDirectory } = require('../../utils')
 
 const path = getDocsDirectory(__dirname)
-const title = 'Linux'
-const firstPost = 'ssh'
+const title = 'Windows'
+const firstPost = 'proxy'
 
 const navItem = {
   text: title,
@@ -15,12 +15,7 @@ const sidebar = {
       title,
       children: [
         firstPost,
-        'change-ssh-login-port',
-        'find-ip-address',
-        'systemctl',
-        'yum',
-        'upload-download',
-        'proxy'
+        'chocolatey'
       ]
     }
   ]

@@ -55,7 +55,7 @@ ssh config 能让我们批量管理多个 ssh，通过别名登陆远程服务�
 
 ### 新建 config 文件
 
-```
+```plain
 host testhost
   HostName 192.168.30.250
   Port 22
