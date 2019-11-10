@@ -60,23 +60,102 @@ const person = {
 
 ```js
 var book = {
-    _year: 2004,
-    edition: 1
+  _year: 2004,
 };
 
 Object.defineProperty(book, "year", {
-    get: function(){
-        return this._year;
-    },
-    set: function(newValue){
-
-        if (newValue > 2004) {
-            this._year = newValue;
-            this.edition += newValue - 2004;
-        }
+  get: function(){
+    return this._year;
+  },
+  set: function(newValue){
+    if (newValue > 2004) {
+        this._year = newValue;
     }
+  }
 });
 
 book.year = 2005;
-alert(book.edition);  //2
+alert(book.edition);  // 2
+```
+
+上面的例子中，是一个简单的访问器属性的使用例子。
+
+例子中声明了一个 `book` 对象，并且给这个 `book` 对象创建了一个 `year` 访问器属性。当直接访问 `book.year` 的时候，返回的是对象的 `_year` 属性的值。当直接给 `book.year` 赋值的时候，如果所赋的值大于 2004，则将值赋值给 `book._year`。
+
+## 定义多个属性
+
+前面在使用 `Object.defineProperty()` 的时候，无论定义数据属性还是访问器属性，一次仅仅只能定义一个属性。而如果想同时定义多个属性，可以使用 `Object.defineProperties()` 方法。
+
+```js
+var book = {};
+
+Object.defineProperties(book, {
+  _year: {
+    writable:true,
+    value: 2004
+  },
+
+  edition: {
+    writable:true,
+    value: 1
+  },
+
+  year: {
+    get: function(){
+      return this._year;
+    },
+
+    set: function(newValue){
+      if (newValue > 2004) {
+        this._year = newValue;
+        this.edition += newValue - 2004;
+      }
+    }
+  }
+});
+```
+
+## 读取属性的特性
+
+想要读取属性 (property) 的特性 (attribute)，可以使用 `Object.getOwnPropertyDescriptor()`，它会返回包含属性 attributes 的对象。
+
+如果是访问器属性，返回的对象属性有 `configurable`、`enumerable`、`get` 和 `set`。
+
+如果是数据属性，这个对象的属性有 `configurable`、`enumerable`、`writable` 和 `value`。
+
+```js
+var book = {};
+
+Object.defineProperties(book, {
+  _year: {
+    value: 2004
+  },
+
+  edition: {
+    value: 1
+  },
+
+  year: {
+    get: function () {
+      return this._year;
+    },
+
+    set: function (newValue) {
+      if (newValue > 2004) {
+        this._year = newValue;
+        this.edition += newValue - 2004;
+      }
+    }
+  }
+});
+
+var descriptor = Object.getOwnPropertyDescriptor(book, "_year");
+alert(descriptor.value);         //2004
+alert(descriptor.configurable); //false
+alert(typeof descriptor.get);    //"undefined"
+
+var descriptor = Object.getOwnPropertyDescriptor(book, "year");
+alert(descriptor.value);        //undefined
+alert(descriptor.enumerable);   //false
+alert(typeof descriptor.get);   //"function"
 ```
