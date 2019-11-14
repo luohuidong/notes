@@ -5,8 +5,9 @@ const babelConfig = require('./babel')
 const electronConfig = require('./electron')
 const gitConfig = require('./git')
 const reactConfig = require('./react')
+const reactNativeConfig = require('./react-native')
 
-const docs = [webpackConfig, babelConfig, electronConfig, gitConfig, reactConfig]
+const docs = [webpackConfig, babelConfig, electronConfig, gitConfig, reactConfig, reactNativeConfig]
 const nav = {
   text: '进阶',
   items: []
