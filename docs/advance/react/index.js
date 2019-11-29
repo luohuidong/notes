@@ -19,7 +19,8 @@ const sidebar = {
         'ssr-csr',
         'data-flow',
         'lifecycle',
-        'fragments'
+        'fragments',
+        'gatsby'
       ]
     }
   ]
