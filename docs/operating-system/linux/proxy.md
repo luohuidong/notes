@@ -13,4 +13,4 @@ export https_proxy="http://localhost:8888"
 
 参考资料：
 
-- [Command line application proxy configuration](https://docs.expo.io/versions/v32.0.0/introduction/troubleshooting-proxies/#command-line-application-proxy-configuration)
+- [Command line application proxy configuration](https://docs.expo.io/versions/latest/guides/troubleshooting-proxies/)
