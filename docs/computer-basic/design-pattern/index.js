@@ -14,6 +14,7 @@ const sidebar = {
       collapsable: false,
       children: [
         firstPost,
+        'oop-principle'
       ]
     }
   ]
