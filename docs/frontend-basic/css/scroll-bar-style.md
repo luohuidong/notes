@@ -78,7 +78,7 @@ body {
 #example::-webkit-scrollbar-thumb {
   width: 5px;
   background: #000;
-	border: 5px solid #3e3e42;
+  border: 5px solid #3e3e42;
 }
 /* 滚动条轨道样式 */
 #example::-webkit-scrollbar-track {

@@ -1,14 +1,14 @@
 const { generateNavAndSidebarConfig } = require('../utils')
 
-const htmlConfig = require('./html')
+const material = require('./material')
 const cssConfig = require('./css')
-const es5Config = require('./javascript')
+const es5Config = require('./es5')
 const typescriptConfig = require('./typescript')
 const npmConfig = require('./npm')
 
-const docs = [ htmlConfig, cssConfig, es5Config, typescriptConfig, npmConfig ]
+const docs = [ material, cssConfig, es5Config, typescriptConfig, npmConfig ]
 const nav = {
-  text: '前端基础',
+  text: '前端',
   items: []
 }
 const sidebar = {}

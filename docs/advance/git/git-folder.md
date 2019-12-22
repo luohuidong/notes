@@ -150,4 +150,6 @@ Git 中的核心对象：
 
 ## commit、tree 和 blob 三者关系
 
-我们每一次提交都会创建一个 commit 对象出来。而一个 commit 会对应一棵树
+我们每一次提交都会创建一个 commit 对象出来。 而一个 commit 可能会对应这一个 tree 对象或者是多个 blob 对象，而一个 tree 对象则会对应多个 tree 对象以及 blob 对象。
+
+tree 对象可以理解为我们提交的文件夹结构，而 blob 对象可以理解为我们提交的文件。
