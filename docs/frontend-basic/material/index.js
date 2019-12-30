@@ -11,7 +11,7 @@ const sidebar = {
         'material',
         'css',
         'event',
-        'web-api'
+        'web-api',
       ]
     },
   ]
