@@ -4,7 +4,7 @@ const path = getDocsDirectory(__dirname)
 
 const navItem = {
   text: '软件开发',
-  link: `${path}2020-1-7`
+  link: `${path}2020-1-6`
 }
 
 const sidebar = {
@@ -12,7 +12,7 @@ const sidebar = {
     {
       title: '敏捷开发',
       children: [
-        '2020-1-7',
+        '2020-1-6',
       ]
     }
   ]
