@@ -6,6 +6,9 @@ const operatingSystem = require('../operating-system')
 const docs = [frontendBasic, advance, computerBasic, operatingSystem]
 
 let nav = [{
+  text: 'GitHub',
+  link: 'https://github.com/luohuidong/notes'
+}, {
   text: '首页',
   link: '/',
 }]
@@ -31,7 +34,7 @@ module.exports = {
       indexName: 'luohuidong',
     },
     nav,
-    sidebarDepth: 2,
+    sidebarDepth: 1,
     sidebar,
   }
 }

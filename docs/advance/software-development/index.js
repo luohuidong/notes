@@ -13,6 +13,7 @@ const sidebar = {
       title: '敏捷开发',
       children: [
         '2020-1-6',
+        '2020-1-7'
       ]
     }
   ]
