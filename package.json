@@ -3,7 +3,8 @@
   "author": "luohuidong <luohuidong01@126.com> (https://notes.luohuidong.cn/)",
   "scripts": {
     "start": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy": "npm run build && ./deploy.sh"
   },
   "license": "Attribution-NonCommercial 4.0 International",
   "devDependencies": {
