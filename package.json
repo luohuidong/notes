@@ -1,8 +1,11 @@
 {
+  "name": "notes",
+  "author": "luohuidong <luohuidong01@126.com> (https://notes.luohuidong.cn/)",
   "scripts": {
     "start": "vuepress dev docs",
     "build": "vuepress build docs"
   },
+  "license": "Attribution-NonCommercial 4.0 International",
   "devDependencies": {
     "eslint": "^6.5.0",
     "vuepress": "^1.1.0"
