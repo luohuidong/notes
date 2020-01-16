@@ -6,11 +6,10 @@ const electronConfig = require('./electron')
 const gitConfig = require('./git')
 const reactConfig = require('./react')
 const reactNativeConfig = require('./react-native')
-const softwareDevelopment = require('./software-development')
 
 const docs = [
   webpackConfig, babelConfig, electronConfig, gitConfig, reactConfig,
-  reactNativeConfig, softwareDevelopment
+  reactNativeConfig
 ]
 const nav = {
   text: '进阶',
