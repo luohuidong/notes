@@ -4,7 +4,7 @@
   "scripts": {
     "start": "vuepress dev docs",
     "build": "vuepress build docs",
-    "deploy": "npm run build && ./deploy.sh"
+    "deploy": "./deploy.sh"
   },
   "license": "CC-BY-SA-4.0",
   "devDependencies": {
