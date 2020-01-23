@@ -16,3 +16,18 @@ cd 某个文件夹
 git init your_project #会在当前路径下创建和项目名称同名的文件夹
 cd your_project
 ```
+
+## 配置 local 用户信息
+
+新建的仓库，如果我们不想默认使用 global 中的配置，则可以为这个仓库设置本地设置（local）设置。这个设置只会对这个仓库有效，而不会影响到其它仓库。
+
+```bash
+git config --local user.name 'allan'
+git config --local user.email 'allan@email.com'
+```
+
+想要查看设置是否成功，则可以执行下面的名来查看 local 设置是否成功：
+
+```bash
+git config --local --list
+```

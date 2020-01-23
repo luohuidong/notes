@@ -1,3 +1,7 @@
+function addPrefix(children, prefix) {
+  return children.map(element => `${prefix}${element}`)
+}
+
 const path = '/advance/git/'
 
 const navItem = {
@@ -11,16 +15,29 @@ const sidebar = {
       title: 'Git',
       children: [
         'material',
+        'git-flow'
+      ]
+    },
+    {
+      title: 'Git 基础',
+      children: addPrefix([
         'start',
         'getting-a-git-repository',
+        '2020-1-23',
         'recording-changes-to-the-repository',
         'rename-filename',
         'git-log',
         'git-folder',
         'git-objects',
-        'git-flow'
-      ]
+      ], 'chapter1/')
     },
+    {
+      title: '独自使用 Git 时的常见场景',
+      children: addPrefix([
+        '2020-1-23',
+        '2020-1-23-2'
+      ], 'chapter2/')
+    }
   ],
 }
 

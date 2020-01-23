@@ -40,7 +40,7 @@ f7484e8 修改 github pages 发布的脚本
 
 当然 `-n` 参数同样可以搭配其他的参数进行使用，如 `--oneline`
 
-```bash
+```git
 git log -n4 --oneline
 ```
 

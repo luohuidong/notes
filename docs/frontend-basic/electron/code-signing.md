@@ -20,9 +20,9 @@ Windows 的签名分为两种类型：
 
 EV Certificate 授信任程度较强，因此它无需像普通的 Code Signing Certificate 那样需要有足够的用户去安装应用之后才能建立信任。因此使用 EV Certificate 进行签名之后，安装的警告提示就能立即消除。但需要注意的是，EV Certificate 是与 USB dongle 绑定的，因此证书无法导出给 CI 工具去实现自动签名的步骤。
 
-EV Code Signing Certificate 的购买可以查看 Microsoft 的文档 [Get a code signing certificate](https://docs.microsoft.com/en-us/windows-hardware/drivers/dashboard/get-a-code-signing-certificate?redirectedfrom=MSDN)，里面提供了几个 certificate authorities 购买 EV Code Signing Certificate 的地址。也可以查看一下 [亚洲诚信](https://www.trustasia.com/code-signing) 的代码签名套餐，这个页面中提供了 Code Signing Certificate 和 EV Certificate 两种签名套餐，可以参考一下。
+EV Code Signing Certificate 的购买可以查看 Microsoft 的文档 [Get a code signing certificate](https://docs.microsoft.com/en-us/windows-hardware/drivers/dashboard/get-a-code-signing-certificate?redirectedfrom=MSDN)，里面提供了几个 certificate authorities 购买 EV Code Signing Certificate 的地址。
 
-另外[这个链接](https://www.trustasia.com/symantec-ev-code-signing-certificate) 关于 Windows 应用在没有签名、有普通签名以及 EV 签名这三种情况下的下载提示。
+
 
 ## 参考资料
 
