@@ -4,10 +4,6 @@ const path = getDocsDirectory(__dirname)
 const title = 'TypeScript'
 const firstPost = 'material'
 
-const basicTypes = require('./basic-types')
-const enums = require('./enums')
-const interfaces = require('./interfaces')
-
 const navItem = {
   text: title,
   link: `${path}${firstPost}`
@@ -16,17 +12,44 @@ const navItem = {
 const sidebar = {
   [path]: [
     {
-      title,
+      title: 'TypeScript',
       children: [
-        firstPost,
-        'interfaces',
+        'material',
         'function',
         'generics'
       ]
     },
-    basicTypes,
-    enums,
-    interfaces
+    {
+      title: '基本类型',
+      children: [
+        'basic-types/introduce',
+        'basic-types/primary',
+        'basic-types/object',
+        'basic-types/extends'
+      ]
+    },
+    {
+      title: '枚举',
+      children: [
+        'enums/introduce',
+        'enums/enums-type',
+        'enums/enums-member-type',
+        'enums/others',
+        'enums/question'
+      ]
+    },
+    {
+      title: '接口',
+      children: [
+        'interfaces/excess-property-checks',
+      ]
+    },
+    {
+      title: '类型检查机制',
+      children: [
+        'type-check/type-inference'
+      ]
+    }
   ],
 }
 
