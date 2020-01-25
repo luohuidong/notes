@@ -1,10 +1,8 @@
 # Type Inference (类型推断)
 
-所谓的类型推断，是指不需要指定变量的类型（函数的返回值类型），TypeScript 可以根据某些规则自动地为其推断出一个类型。
+所谓的类型推断，是指不需要指定变量的类型或者不指定函数的返回值类型，TypeScript 可以根据某些规则自动地为其推断出一个类型。
 
-## Basics
-
-在 TypeScript 中，在没有明确提供类型注解的时候，type inference 将会在某些地方起到提供类型信息的作用。
+在 TypeScript 中，在没有明确提供类型注解的地方，type inference 会起到提供类型信息的作用。例如：
 
 ```ts
 let x = 3;
@@ -20,7 +18,7 @@ let x = 3;
 let x = [0, 1, null];
 ```
 
-当要推断变量 `x` 类型时，我们需要考虑数组中所有元素的类型。我们给数组类型提供了两种选择：`number` 和 `null`。Best common type 算法会考虑每一个候选类型，并得到一个与所有候选类型兼容的类型。
+当要推断变量 `x` 类型时，我们需要考虑数组中所有元素的类型。我们给数组类型提供了两种选择：`number` 和 `null`。Best common type 算法会考虑每一个候选类型，并得到一个与所有候选类型兼容的类型，由于 `null` 是 `number` 的子类型，因此 `x` 的类型为 `number[]`。
 
 Best common type 需要从所提供的候选类型中选择，但有一些情况就是所有的候选类型都有共同的结构，但是没有一种类型是其它类型的父类型，这个时候可能如：
 
@@ -38,12 +36,12 @@ let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()];
 
 ## Contextual Typing
 
-类型推断一般是从右向左推断类型，但有时候类型推断也能从左向右推断。这称之为 contextual typing。Contextual typing 发生在表达式的类型已经隐含在它所处的位置时。如：
+类型推断一般是从表达式的右侧去推断左侧的类型，但有时候类型推断也能从左向右推断。这称之为 contextual typing。Contextual typing 发生在表达式的类型已经隐含在它所处的位置时。如：
 
 ```ts
 window.onmousedown = function(mouseEvent) {
-    console.log(mouseEvent.button);   //<- OK
-    console.log(mouseEvent.kangaroo); //<-·  Error!
+  console.log(mouseEvent.button);   //<- OK
+  console.log(mouseEvent.kangaroo); //<-·  Error!
 };
 ```
 
@@ -53,7 +51,7 @@ TypeScript 还能够很好地推断出其它上下文中的类型：
 
 ```ts
 window.onscroll = function(uiEvent) {
-    console.log(uiEvent.button); //<- Error!
+  console.log(uiEvent.button); //<- Error!
 }
 ```
 
@@ -63,7 +61,7 @@ window.onscroll = function(uiEvent) {
 
 ```ts
 const handler = function(uiEvent) {
-    console.log(uiEvent.button); //<- OK
+  console.log(uiEvent.button); //<- OK
 }
 ```
 
@@ -71,18 +69,8 @@ const handler = function(uiEvent) {
 
 ```ts
 window.onscroll = function(uiEvent: any) {
-    console.log(uiEvent.button);  //<- Now, no error is given
+  console.log(uiEvent.button);  //<- Now, no error is given
 };
 ```
 
 但是这段代码所打出的日志为 `undefined`，因为 `uiEvent` 并没有一个叫 `button` 的属性。
-
-Contextual typing 在很多地方可以用到。通常包括函数调用的参数、赋值表达式的右侧、类型断言、对象的成员和数组字面量。在 best common type 中，Contextual type 也作为候选类型。例如：
-
-```ts
-function createZoo(): Animal[] {
-    return [new Rhino(), new Elephant(), new Snake()];
-}
-```
-
-在这个例子中，best common type 有这个候选类型：`Animal`、`Rhino`、`Elephant` 和 `Snake`。在这里，`Animal` 烈性将会被 best common type 算法所选中。
