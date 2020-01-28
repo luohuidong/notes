@@ -71,6 +71,4 @@ class Dog extends Animal {
 let animal: Animal = new Dog(2) // OK!
 ```
 
-类中
-
-
+私有成员和受保护成员对兼容性影响的特性，使得子类的实例可以赋值给父类类型的变量，但是不能赋值给非同一个原型链上的类类型变量。

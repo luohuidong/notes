@@ -15,8 +15,14 @@ const sidebar = {
       title: 'TypeScript',
       children: [
         'material',
-        'function',
         'generics'
+      ]
+    },
+    {
+      title: '函数',
+      children: [
+        'function/introduce',
+        'function/function-types'
       ]
     },
     {
