@@ -48,7 +48,14 @@ const sidebar = {
       title: '类型检查机制',
       children: [
         'type-check/type-inference',
-        'type-check/type-compatibility'
+      ]
+    },
+    {
+      title: '类型兼容性',
+      children: [
+        'type-compatibility/introduction',
+        'type-compatibility/function',
+        'type-compatibility/class'
       ]
     }
   ],
