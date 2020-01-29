@@ -7,9 +7,10 @@ const npmConfig = require('./npm')
 const reactConfig = require('./react')
 const reactNativeConfig = require('./react-native')
 
-const webpackConfig = require('../frontend-basic/webpack')
+const gitConfig = require('./git')
+const webpackConfig = require('./webpack')
 const babelConfig = require('./babel')
-const electronConfig = require('../frontend-basic/electron')
+const electronConfig = require('./electron')
 
 const nav = {
   text: '前端',
@@ -23,7 +24,7 @@ const nav = {
     },
     {
       text: '工程化',
-      items: [webpackConfig.navItem, babelConfig.navItem]
+      items: [webpackConfig.navItem, babelConfig.navItem, gitConfig]
     },
     {
       text: 'React 全家桶',

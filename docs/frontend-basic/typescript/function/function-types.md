@@ -34,4 +34,19 @@ let myAdd: (baseValue: number, increment: number) => number =
 
 函数类型中，通过在参数与返回类型之间添加 `=>` 的方式来让我们清楚知道哪一部分是返回类型。正如前面所提到的，返回类型也是函数类型中必要的部分，因此如果函数没有返回值的时候，返回类型则应该使用 `void`。
 
+值得注意的是，函数类型仅由参数以及返回类型组成。函数体中捕获的变量并不会反映在类型定义中。实际上，捕获变量只是函数“隐藏状态”的一部分，而不是 API 的组成部分。
 
+## 推断类型
+
+如果只在等式的一边定义了类型，TypeScript 编译器也会得知等式另一边的类型：
+
+```ts
+// myAdd has the full function type
+let myAdd = function(x: number, y: number): number { return  x + y; };
+
+// The parameters 'x' and 'y' have the type number
+let myAdd: (baseValue: number, increment: number) => number =
+    function(x, y) { return x + y; };
+```
+
+这称之为 contextual typing，是一种类型推断的形式。Contextual typing 能够减少程序中定义类型的工作量。

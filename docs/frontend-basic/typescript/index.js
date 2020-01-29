@@ -22,7 +22,8 @@ const sidebar = {
       title: '函数',
       children: [
         'function/introduce',
-        'function/function-types'
+        'function/function-types',
+        'function/optional-and-default-parameters'
       ]
     },
     {
