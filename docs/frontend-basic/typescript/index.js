@@ -51,12 +51,7 @@ const sidebar = {
         'interfaces/excess-property-checks',
       ]
     },
-    {
-      title: '类型检查机制',
-      children: [
-        'type-check/type-inference',
-      ]
-    },
+    'type-inference',
     {
       title: '类型兼容性',
       children: [

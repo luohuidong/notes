@@ -2,7 +2,7 @@ function addPrefix(children, prefix) {
   return children.map(element => `${prefix}${element}`)
 }
 
-const path = '/advance/git/'
+const path = '/frontend-basic/git/'
 
 const navItem = {
   text: 'Git',

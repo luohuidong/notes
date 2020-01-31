@@ -24,7 +24,7 @@ const nav = {
     },
     {
       text: '工程化',
-      items: [webpackConfig.navItem, babelConfig.navItem, gitConfig]
+      items: [gitConfig.navItem, webpackConfig.navItem, babelConfig.navItem]
     },
     {
       text: 'React 全家桶',
@@ -38,7 +38,7 @@ const nav = {
 }
 const sidebar = Object.assign({},
   material.sidebar, cssConfig.sidebar, es5Config.sidebar, typescriptConfig.sidebar, npmConfig.sidebar,
-  webpackConfig.sidebar, babelConfig.sidebar,
+  gitConfig.sidebar, webpackConfig.sidebar, babelConfig.sidebar,
   reactConfig.sidebar, reactNativeConfig.sidebar,
   electronConfig.sidebar
 )
