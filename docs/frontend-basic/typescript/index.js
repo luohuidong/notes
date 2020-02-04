@@ -23,7 +23,8 @@ const sidebar = {
       children: [
         'function/introduce',
         'function/function-types',
-        'function/optional-and-default-parameters'
+        'function/optional-and-default-parameters',
+        'function/rest-parameters'
       ]
     },
     {

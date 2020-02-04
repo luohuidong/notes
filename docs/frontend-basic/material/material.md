@@ -28,3 +28,9 @@
 
 - [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - [Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)：DOM API 文档
+
+## HTML forms
+
+- MDN 入门系列教程：
+  - [Web forms — Collecting data from users](https://developer.mozilla.org/en-US/docs/Learn/Forms)
+
