@@ -11,6 +11,7 @@ const gitConfig = require('./git')
 const webpackConfig = require('./webpack')
 const babelConfig = require('./babel')
 const electronConfig = require('./electron')
+const automaticTextConfig = require('./automatic-test')
 
 const nav = {
   text: '前端',
@@ -24,7 +25,10 @@ const nav = {
     },
     {
       text: '工程化',
-      items: [gitConfig.navItem, webpackConfig.navItem, babelConfig.navItem]
+      items: [
+        gitConfig.navItem, webpackConfig.navItem, babelConfig.navItem,
+        automaticTextConfig.navItem
+      ]
     },
     {
       text: 'React 全家桶',
@@ -38,7 +42,7 @@ const nav = {
 }
 const sidebar = Object.assign({},
   material.sidebar, cssConfig.sidebar, es5Config.sidebar, typescriptConfig.sidebar, npmConfig.sidebar,
-  gitConfig.sidebar, webpackConfig.sidebar, babelConfig.sidebar,
+  gitConfig.sidebar, webpackConfig.sidebar, babelConfig.sidebar, automaticTextConfig.sidebar,
   reactConfig.sidebar, reactNativeConfig.sidebar,
   electronConfig.sidebar
 )
