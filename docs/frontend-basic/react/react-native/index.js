@@ -1,8 +1,8 @@
-const { getDocsDirectory } = require('../../utils')
+const { getDocsDirectory } = require('../../../utils')
 
 const path = getDocsDirectory(__dirname)
-const title = 'Webpack'
-const firstPost = 'concepts'
+const title = 'React Native'
+const firstPost = 'material'
 
 const navItem = {
   text: title,
@@ -12,9 +12,10 @@ const navItem = {
 const sidebar = {
   [path]: [
     {
-      title,
+      title: 'React Native',
       children: [
-        firstPost,
+        `${firstPost}`,
+        'gradle-proxy'
       ]
     }
   ]

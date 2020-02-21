@@ -1,22 +1,21 @@
 const { getDocsDirectory } = require('../../utils')
 
 const path = getDocsDirectory(__dirname)
-const title = 'CSS'
-const firstPost = 'scroll-bar-style'
+const firstPost = 'material'
 
 const navItem = {
-  text: title,
+  text: 'Node',
   link: `${path}${firstPost}`
 }
 
 const sidebar = {
   [path]: [
     {
-      title: 'CSS',
+      title: 'Node',
       children: [
-        'scroll-bar-style',
+        'material',
       ]
-    },
+    }
   ]
 }
 

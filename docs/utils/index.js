@@ -13,7 +13,7 @@ function getDocsDirectory(dirName) {
 }
 
 /**
- * 
+ *
  * @param {object} configs
  * @param {object} navConfig
  * @param {object} sidebarConfig
@@ -26,7 +26,17 @@ function generateNavAndSidebarConfig(configs, navConfig, sidebarConfig) {
 
 }
 
+/**
+ * 添加前缀
+ * @param {*} children
+ * @param {*} prefix
+ */
+function addPrefix(children, prefix) {
+  return children.map(element => `${prefix}${element}`)
+}
+
 module.exports = {
   getDocsDirectory,
-  generateNavAndSidebarConfig
+  generateNavAndSidebarConfig,
+  addPrefix
 }

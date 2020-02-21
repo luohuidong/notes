@@ -1,17 +1,17 @@
-const material = require('./material')
-const cssConfig = require('./css')
-const es5Config = require('./es5')
-const typescriptConfig = require('./typescript')
-const npmConfig = require('./npm')
+const material = require('./basic/material')
+const es5Config = require('./basic/es5')
+const typescriptConfig = require('./basic/typescript')
 
-const reactConfig = require('./react')
-const reactNativeConfig = require('./react-native')
+const reactConfig = require('./react/react')
+const reactNativeConfig = require('./react/react-native')
 
-const gitConfig = require('./git')
-const webpackConfig = require('./webpack')
-const babelConfig = require('./babel')
+const gitConfig = require('./engineering/git')
+const webpackConfig = require('./engineering/webpack')
+const babelConfig = require('./engineering/babel')
+const automaticTextConfig = require('./engineering/automatic-test')
+const log = require('./engineering/log')
+
 const electronConfig = require('./electron')
-const automaticTextConfig = require('./automatic-test')
 
 const nav = {
   text: '前端',
@@ -19,15 +19,14 @@ const nav = {
     {
       text: '基础',
       items: [
-        material.navItem, cssConfig.navItem, es5Config.navItem, typescriptConfig.navItem,
-        npmConfig.navItem
+        material.navItem, es5Config.navItem, typescriptConfig.navItem,
       ]
     },
     {
       text: '工程化',
       items: [
         gitConfig.navItem, webpackConfig.navItem, babelConfig.navItem,
-        automaticTextConfig.navItem
+        automaticTextConfig.navItem, log.navItem
       ]
     },
     {
@@ -41,8 +40,8 @@ const nav = {
   ]
 }
 const sidebar = Object.assign({},
-  material.sidebar, cssConfig.sidebar, es5Config.sidebar, typescriptConfig.sidebar, npmConfig.sidebar,
-  gitConfig.sidebar, webpackConfig.sidebar, babelConfig.sidebar, automaticTextConfig.sidebar,
+  material.sidebar, es5Config.sidebar, typescriptConfig.sidebar,
+  gitConfig.sidebar, webpackConfig.sidebar, babelConfig.sidebar, automaticTextConfig.sidebar, log.sidebar,
   reactConfig.sidebar, reactNativeConfig.sidebar,
   electronConfig.sidebar
 )

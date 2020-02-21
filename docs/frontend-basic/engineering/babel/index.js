@@ -1,4 +1,4 @@
-const { getDocsDirectory } = require('../../utils')
+const { getDocsDirectory } = require('../../../utils')
 
 const path = getDocsDirectory(__dirname)
 const title = 'Babel'

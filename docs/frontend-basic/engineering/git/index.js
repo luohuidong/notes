@@ -1,8 +1,6 @@
-function addPrefix(children, prefix) {
-  return children.map(element => `${prefix}${element}`)
-}
+const { getDocsDirectory, addPrefix } = require('../../../utils')
 
-const path = '/frontend-basic/git/'
+const path = getDocsDirectory(__dirname)
 
 const navItem = {
   text: 'Git',

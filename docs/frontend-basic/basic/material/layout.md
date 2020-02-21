@@ -1,8 +1,4 @@
-# CSS
-
-- [CSS Modules](https://github.com/css-modules/css-modules)
-
-## 布局
+# 布局
 
 [布局](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout)
 
@@ -11,7 +7,7 @@
   - [All About Floats](https://css-tricks.com/all-about-floats/)
 - [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
 
-### Grid
+## Grid
 
 [Grids](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids) 阅读这篇文章能对 Gird 有一个大致的了解。
 

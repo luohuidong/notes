@@ -1,23 +1,29 @@
-const { getDocsDirectory } = require('../../utils')
+const { getDocsDirectory } = require('../../../utils')
 
 const path = getDocsDirectory(__dirname)
+const title = 'React'
 const firstPost = 'material'
 
 const navItem = {
-  text: '自动化测试',
+  text: title,
   link: `${path}${firstPost}`
 }
 
 const sidebar = {
   [path]: [
     {
-      title: '自动化测试',
+      title: 'React',
       children: [
         'material',
+        'ssr-csr',
+        'data-flow',
+        'lifecycle',
+        'fragments',
+        'gatsby'
       ]
     }
   ]
-};
+}
 
 module.exports = {
   navItem,
