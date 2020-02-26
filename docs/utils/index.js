@@ -32,7 +32,7 @@ function generateNavAndSidebarConfig(configs, navConfig, sidebarConfig) {
  * @param {*} prefix
  */
 function addPrefix(children, prefix) {
-  return children.map(element => `${prefix}${element}`)
+  return children.map(element => `${prefix}/${element}`)
 }
 
 module.exports = {

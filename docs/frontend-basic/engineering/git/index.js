@@ -27,14 +27,14 @@ const sidebar = {
         'git-log',
         'git-folder',
         'git-objects',
-      ], 'chapter1/')
+      ], 'chapter1')
     },
     {
       title: '独自使用 Git 时的常见场景',
       children: addPrefix([
         '2020-1-23',
         '2020-1-23-2'
-      ], 'chapter2/')
+      ], 'chapter2')
     }
   ],
 }

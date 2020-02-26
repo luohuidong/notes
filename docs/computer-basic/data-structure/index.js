@@ -12,7 +12,7 @@ const navItem = {
 const sidebar = {
   [path]: [
     {
-      title: '简介',
+      title: '数据结构与算法简介',
       children: addPrefix([
         '2020-02-25',
         '2020-02-26'
