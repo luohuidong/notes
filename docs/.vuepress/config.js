@@ -18,6 +18,17 @@ docs.forEach(element => {
 });
 
 module.exports = {
+  plugins: [
+    [
+      'vuepress-plugin-mathjax',
+      {
+        target: 'svg',
+        macros: {
+          '*': '\\times',
+        },
+      },
+    ],
+  ],
   title: 'Code Notes',
   description: '代码笔录',
   head: [
