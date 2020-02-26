@@ -3,10 +3,11 @@ const organizationAndArchitecture = require('./organization-and-architecture')
 const designPatternConfig = require('./design-pattern')
 const compilersConfig = require('./compilers')
 const softwareDevelopmentConfig = require('./software-development')
+const dataStructureConfig = require('./data-structure')
 
 const docs = [
   organizationAndArchitecture, designPatternConfig, compilersConfig,
-  softwareDevelopmentConfig
+  softwareDevelopmentConfig, dataStructureConfig
 ]
 const nav = {
   text: '计算机基础',
