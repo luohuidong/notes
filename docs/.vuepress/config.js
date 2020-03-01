@@ -3,8 +3,9 @@ const computerBasic = require('../computer-basic')
 const operatingSystem = require('../operating-system')
 const backend = require('../backend')
 const blog = require('../blog')
+const others = require('../others')
 
-const docs = [frontendBasic, backend, computerBasic, operatingSystem, blog]
+const docs = [frontendBasic, backend, computerBasic, operatingSystem, others, blog]
 
 let nav = [{
   text: '首页',

@@ -1,8 +1,8 @@
 const { getDocsDirectory, addPrefix } = require('../../utils')
 
 const path = getDocsDirectory(__dirname)
-const title = '数据结构与算法'
-const firstPost = 'introduce/2020-02-25'
+const title = '音视频入门'
+const firstPost = '2020-02-29'
 
 const navItem = {
   text: title,
@@ -12,14 +12,11 @@ const navItem = {
 const sidebar = {
   [path]: [
     {
-      title: '数据结构与算法简介',
-      children: addPrefix([
-        '2020-02-25',
-        '2020-02-26',
-        '2020-03-01'
-      ], 'introduce')
+      title: '音视频入门',
+      children: [
+        firstPost
+      ]
     },
-
   ],
 }
 
