@@ -24,7 +24,8 @@ const sidebar = {
         'introduce',
         'function-types',
         'optional-and-default-parameters',
-        'rest-parameters'
+        'rest-parameters',
+        'this'
       ], 'function')
     },
     {
