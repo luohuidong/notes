@@ -21,7 +21,8 @@ const sidebar = {
         'layout',
         'scroll-bar-style',
         'video-audio',
-        'web-api'
+        'web-api',
+        'regular-expressions'
       ]
     },
   ]

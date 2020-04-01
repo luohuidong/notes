@@ -1,5 +1,6 @@
 # Excess Property Checks（多余属性的检测）
 
+
 ```ts
 interface Label {
   label: string
@@ -31,7 +32,7 @@ function printLabel(labeledObj: Label) {
 let myObj = { size: 10, label: "Size 10 Object" };
 printLabel(myObj);
 
-/**
+/**local
  * Type '{ size: number; label: string; }' is not assignable to type 'Label'.
  *
  * Object literal may only specify known properties, and 'size' does not exist

@@ -50,6 +50,8 @@ const sidebar = {
     {
       title: '接口',
       children: addPrefix([
+        'introduction',
+        'our-first-interface',
         'excess-property-checks',
       ], 'interfaces')
     },
