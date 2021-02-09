@@ -1,6 +1,7 @@
 const material = require('./basic/material')
 const es5Config = require('./basic/es5')
 const typescriptConfig = require('./basic/typescript')
+const browserConfig = require('./basic/browser')
 
 const reactConfig = require('./react/react')
 const reactNativeConfig = require('./react/react-native')
@@ -19,7 +20,7 @@ const nav = {
     {
       text: '基础',
       items: [
-        material.navItem, es5Config.navItem, typescriptConfig.navItem,
+        material.navItem, es5Config.navItem, typescriptConfig.navItem, browserConfig.navItem
       ]
     },
     {
@@ -40,7 +41,7 @@ const nav = {
   ]
 }
 const sidebar = Object.assign({},
-  material.sidebar, es5Config.sidebar, typescriptConfig.sidebar,
+  material.sidebar, es5Config.sidebar, typescriptConfig.sidebar, browserConfig.sidebar,
   gitConfig.sidebar, webpackConfig.sidebar, babelConfig.sidebar, automaticTextConfig.sidebar, log.sidebar,
   reactConfig.sidebar, reactNativeConfig.sidebar,
   electronConfig.sidebar
